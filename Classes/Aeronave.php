@@ -6,11 +6,17 @@ class Aeronave
     private string $modelo;
     private $Funcionarios = [];
     private $Passageiros = [];
+    private $Capacidade = [];
 
     public function __construct($id, $modelo)
     {
       $this->id = $id;
       $this->modelo = $modelo;
+    }
+
+    public function adcionarCapacidade(Capacidade $Capacidade) 
+    {
+        $this->Capacidade[] = $Capacidade;
     }
 
     public function adcionarFuncionarios(Funcionarios $Funcionarios) 
@@ -46,5 +52,23 @@ class Aeronave
             "Bagagen: " . $Passageiros->getBagagem() . "\n";
         }
         return $listaPassageiros;
+    }
+    public function inspecionar(Capacidade $capacidade)
+    {
+        $verificador = 
+        "Assentos:  " . $capacidade->getLugares() . "\n" 
+        . "Combustivel: " . $capacidade->getCombustivel() . "\n"
+        . "Cargo: " . $capacidade->getCargo() . "\n";
+       return $verificador;
+    }
+    
+    public function getModelo()
+    {
+        return $this->modelo;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }
