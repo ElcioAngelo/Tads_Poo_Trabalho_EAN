@@ -37,7 +37,10 @@ class Localizacao
 
     public function Cronometrar()
     {
-
+        $Velocidade = 100;
+        $Distancia = 448;
+        $tempo = $Distancia / $Velocidade;
+        return round($tempo) . " Horas";
     }
 
 

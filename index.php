@@ -17,7 +17,7 @@ $passageiro1 = new Passageiros("Robervaldo","60070029","Brasileiro(a)","05/03/19
 $verificador = new Verificador();
 $localizacaonova = new Localizacao("SP - São Paulo","Aeroporto Congonhas","SC - Santa Catarina","Aeroporto Internacional Florianopolis");
 $voarvoarsubirsubir = new Voo(30401442); 
-$capacidadenova = new Capacidade("Querosene, Cheio, 5000L","550 Lugares","Vôo Comercial, Bagagens, Maletas, 2T");
+$capacidadenova = new Capacidade("Cheio","550","Bagagens,Maletas,Pets");
 $disponibilidade = new Disponibilidade("Ensoralado",'10/02/2024');
 
 
@@ -27,19 +27,35 @@ $aeronaveNova->adcionarPassageiros($passageiro1); //add os passageiros na aerona
 $aeronaveNova->adcionarFuncionarios($funcionario1);// ^, porém com os funcionarios.
 $aeronaveNova->adcionarFuncionarios($funcionario2);// ^.
 $aeronaveNova->adcionarCapacidade($capacidadenova);// adcionando capacidade.
-/*
+$verificador->adcionarFuncionarios($funcionario1);
+$verificador->adcionarFuncionarios($funcionario2);
+
 //verificador para ver se o passageiro existe.
+
 if($verificador->CheckIn($passageiro1->getCPF()) == true){ //pega o CPF da classe passageiros e verifica se existe no Verificador
     echo $aeronaveNova->listarPassageiros();
 }else{
     echo "Erro, Passageiro não encontrado"; // caso não encontre.
 }
+echo "\n";
+if($disponibilidade->verificarDisponibilidade($capacidadenova,$disponibilidade) == true){
+    echo $voarvoarsubirsubir->listarVoo($voarvoarsubirsubir,$aeronaveNova,$funcionario1,$localizacaonova);
+}else{
+    echo "Voo cancelado";
+}
 
-echo $aeronaveNova->listarFuncionarios(); //lista os funcionarios!
-
-echo $voarvoarsubirsubir->listarVoo($voarvoarsubirsubir,$aeronaveNova,$funcionario1,$localizacaonova);
+echo "\n";
 
 echo $aeronaveNova->inspecionar($capacidadenova);
-*/
-echo ($disponibilidade->verificarDisponibilidade($aeronaveNova,$capacidadenova));
 
+echo "\n";
+
+if($verificador->VerificarFuncionarios($funcionario1->getID()) == true){
+    echo $aeronaveNova->listarFuncionarios();
+        } else {
+        echo "Funcionario Não encontrado!!";
+        }
+   
+
+//Adcionado: Verificadores de Funcionarios, Verificador de Disponibilidade(Vôo), 
+//Função para calcular a hora que o vôo vai levar usando a distancia e a velocidade.

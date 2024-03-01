@@ -29,10 +29,11 @@ class Voo
     public function listarVoo(Voo $Voo, Aeronave $Aeronave, Funcionarios $Funcionarios, Localizacao $Localizacao){
 
         $ListarVoo = 'Identificação do Vôo: ' . $Voo->getId() . "\n" 
-        . " Aeronave: " . $Aeronave->getModelo() . " Brazillian Airlines " . "\n"
-        . " Piloto: " . $Funcionarios->getNome()  . " Id: " . $Funcionarios->getID() . "\n" .
-        " Aeroporto Inicial: " . $Localizacao->getAeroporto() . "Do Estado de " . $Localizacao->getEstado() . "\n" 
-        . " Destino a: " . $Localizacao->getDestino() . " | " . $Localizacao->getAeroportoDestino();
+        . "Aeronave: " . $Aeronave->getModelo() . " Brazillian Airlines " . "\n"
+        . "Piloto: " . $Funcionarios->getNome()  . " | " . " Id: " . $Funcionarios->getID() . "\n" .
+        "Aeroporto Inicial: " . $Localizacao->getAeroporto() . " Do Estado de " . $Localizacao->getEstado() . "\n" 
+        . "Destino a: " . $Localizacao->getDestino() . " | " . $Localizacao->getAeroportoDestino() . "\n" .
+        "Tempo de Vôo: " . $Localizacao->Cronometrar(); 
         
         return $ListarVoo;
     }

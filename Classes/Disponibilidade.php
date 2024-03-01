@@ -11,14 +11,23 @@ class Disponibilidade
         $this->clima = $clima;
         $this->horario = $horario;
     }
+    public function getClima(){
+        return $this->clima;
+    }
     
     public function adcionarVoo(Voo $Voo)
     {
         $this->Voo[] = $Voo;
     }
 
-    public function verificarDisponibilidade(Aeronave $Aeronave, Capacidade $Capacidade)
+    public function verificarDisponibilidade(Capacidade $capacidade, Disponibilidade $disponivel)
     { 
-    
-}
+        if($capacidade->getCombustivel() == 'Vazio'){
+            return false;
+        }else if($disponivel->getClima() == 'Chuvoso'){
+            return false;
+        }else{
+            return true;
+        }
+    }
 }
