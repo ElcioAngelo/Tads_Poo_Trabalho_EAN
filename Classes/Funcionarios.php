@@ -6,24 +6,24 @@ class Funcionarios
     private string $nome;
     private string $cargo;
 
-    public function __construct($id,$nome,$cargo)
+    public function __construct($id,$nome,$cargo)//inicializa as variaveis 
     {
         $this->id = $id;
         $this->nome = $nome;
         $this->cargo = $cargo;
     }
 
-    public function getID()
+    public function getID()//retorna o id
     {
         return $this->id;
     }
 
-    public function getNome() 
+    public function getNome()//retorna o nome.
     {
         return $this->nome;
     }
 
-    public function getCargo()
+    public function getCargo()//retorna o cargo.
     {
         return $this->cargo;
     }

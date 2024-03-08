@@ -8,7 +8,7 @@ class Passageiros
     private string $data_nascimento;
     private string $bagagem;
 
-    public function __construct($nome,$CPF,$nacionalidade,$data_nascimento,$bagagem)
+    public function __construct($nome,$CPF,$nacionalidade,$data_nascimento,$bagagem)//inicializa as variaveis
     {
         $this->nome = $nome;
         $this->CPF = $CPF;
@@ -17,27 +17,27 @@ class Passageiros
         $this->bagagem = $bagagem;
     }
 
-    public function getNome()
+    public function getNome()// retorna o nome
     {
         return $this->nome;
     }
 
-    public function getCPF()
+    public function getCPF()//retorna o CPF
     {
         return $this->CPF;
     }
 
-    public function getNacionalidade()
+    public function getNacionalidade()// retorna a nacionalidade
     {
         return $this->nacionalidade;
     }
 
-    public function getData_Nascimento()
+    public function getData_Nascimento()// retorna a data_nascimento
     {
         return $this->data_nascimento;
     }
 
-    public function getBagagem()
+    public function getBagagem()//retorna a bagagem do passageiro
     {
         return $this->bagagem;
     }

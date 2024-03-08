@@ -6,9 +6,10 @@ class Localizacao
     private string $aeroporto;
     private string $destino;
     private string $aeroportoDestino;
+    private Porte $Porte; //verifica se o aeroporto comporta o avião.
 
 
-    public function __construct($estado,$aeroporto,$destino, $aeroportoDestino)
+    public function __construct($estado,$aeroporto,$destino, $aeroportoDestino)//inicializa as variaveis.
     {
         $this->estado = $estado;
         $this->aeroporto = $aeroporto;
@@ -16,32 +17,31 @@ class Localizacao
         $this->aeroportoDestino = $aeroportoDestino;
     }
 
-    public function getEstado()
+    public function getEstado()//retorna o estado.
     {
         return $this->estado;
     }
 
-    public function getAeroporto()
+    public function getAeroporto()//retorna o aeroporto
     {
         return $this->aeroporto;
     }
 
-    public function getDestino()
+    public function getDestino()//retorna o destino.
     {
         return $this->destino;
     }
-    public function getAeroportoDestino()
+    public function getAeroportoDestino()//reporta o aeroporto de destino.
     {
         return $this->aeroportoDestino;
     }
 
-    public function Cronometrar()
+    public function Cronometrar()//com as duas variaveis criadas, calcula o tempo de voo (vou achar outro meio de calcular).
     {
         $Velocidade = 100;
         $Distancia = 448;
         $tempo = $Distancia / $Velocidade;
         return round($tempo) . " Horas";
     }
-
 
 }
